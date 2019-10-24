@@ -17,6 +17,7 @@ use craft\services\Plugins;
 use craft\events\PluginEvent;
 use craft\events\RegisterComponentTypesEvent;
 use unionco\paytrace\gateways\PayTrace as PayTraceGateway;
+use unionco\paytrace\services\Omnipay;
 use yii\base\Event;
 
 /**
@@ -117,8 +118,8 @@ class PayTrace extends Plugin
      */
     private function _registerComponents()
     {
-        $this->registerComponents([
-
+        $this->setComponents([
+            'omnipay' => Omnipay::class,
         ]);
     }
 

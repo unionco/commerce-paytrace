@@ -1,28 +1,31 @@
 {% from "_includes/forms" import textField, lightswitchField, selectField, autosuggestField %}
 
 {{ autosuggestField({
-    label: 'Client ID'|t('commerce'),
-    id: 'clientId',
+    label: 'User Name'|t('commerce'),
+    id: 'userName',
     class: 'ltr',
-    name: 'clientId',
+    name: 'userName',
     suggestEnvVars: true,
-    value: gateway.clientId,
-    errors: gateway.getErrors('clientId')
+    value: gateway.userName,
+    errors: gateway.getErrors('userName')
 }) }}
 
 {{ autosuggestField({
-    label: "Secret"|t('commerce'),
-    id: 'secret',
+    label: "Password"|t('commerce'),
+    id: 'password',
     class: 'ltr',
-    name: 'secret',
+    name: 'password',
     suggestEnvVars: true,
-    value: gateway.secret,
-    errors: gateway.getErrors('secret')
+    value: gateway.password,
+    errors: gateway.getErrors('password')
 }) }}
 
-{{ lightswitchField({
-    label: "Test mode?"|t('commerce'),
+{{ autosuggestField({
+    label: "Test mode"|t('commerce'),
+    id: 'testMode',
+    class: 'ltr',
     name: 'testMode',
-    on: gateway.testMode,
+    suggestEnvVars: true,
+    value: gateway.testMode,
     errors: gateway.getErrors('testMode'),
 }) }}
