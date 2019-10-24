@@ -1,26 +1,28 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
-{#
-/**
- * commerce-paytrace plugin for Craft CMS 3.x
- *
- * commerce-paytrace Settings.twig
- *
- * @author    UNION
- * @copyright Copyright (c) 2019 UNION
- * @link      https://github.com/unionco
- * @package   PayTrace
- * @since     0.0.1
- */
-#}
+{% from "_includes/forms" import textField, lightswitchField, selectField, autosuggestField %}
 
-{% import "_includes/forms" as forms %}
+{{ autosuggestField({
+    label: 'Client ID'|t('commerce'),
+    id: 'clientId',
+    class: 'ltr',
+    name: 'clientId',
+    suggestEnvVars: true,
+    value: gateway.clientId,
+    errors: gateway.getErrors('clientId')
+}) }}
 
-{% do view.registerAssetBundle("unionco\\paytrace\\assetbundles\\paytrace\\PayTraceAsset") %}
+{{ autosuggestField({
+    label: "Secret"|t('commerce'),
+    id: 'secret',
+    class: 'ltr',
+    name: 'secret',
+    suggestEnvVars: true,
+    value: gateway.secret,
+    errors: gateway.getErrors('secret')
+}) }}
 
-{{ forms.textField({
-    label: 'Some Field',
-    instructions: 'Enter some setting here.',
-    id: 'someAttribute',
-    name: 'someAttribute',
-    value: settings['someAttribute']})
-}}
+{{ lightswitchField({
+    label: "Test mode?"|t('commerce'),
+    name: 'testMode',
+    on: gateway.testMode,
+    errors: gateway.getErrors('testMode'),
+}) }}

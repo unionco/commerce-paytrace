@@ -10,10 +10,6 @@
         "craft-plugin",
         "commerce-paytrace"
     ],
-    "support": {
-        "docs": "???",
-        "issues": "???"
-    },
     "license": "MIT",
     "authors": [
         {
@@ -22,7 +18,9 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0-RC1"
+        "craftcms/cms": "^3.0.0-RC1",
+        "softcommerce/omnipay-paytrace": "^1.2",
+        "craftcms/commerce": "^2.2"
     },
     "autoload": {
         "psr-4": {

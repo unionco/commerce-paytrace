@@ -10,13 +10,13 @@
 
 namespace unionco\paytrace;
 
-use unionco\paytrace\models\Settings;
-
 use Craft;
 use craft\base\Plugin;
+use craft\commerce\services\Gateways;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
-
+use craft\events\RegisterComponentTypesEvent;
+use unionco\paytrace\gateways\PayTrace as PayTraceGateway;
 use yii\base\Event;
 
 /**
@@ -53,6 +53,43 @@ class PayTrace extends Plugin
      */
     public function init()
     {
+        $this->_initializePlugin();
+        $this->_registerComponents();
+        $this->_registerGateways();
+    }
+
+    // Settings are provided at the Gateway level
+    // // Protected Methods
+    // // =========================================================================
+
+    // /**
+    //  * @inheritdoc
+    //  */
+    // protected function createSettingsModel()
+    // {
+    //     return new Settings();
+    // }
+
+    // /**
+    //  * @inheritdoc
+    //  */
+    // protected function settingsHtml(): string
+    // {
+    //     return Craft::$app->view->renderTemplate(
+    //         'commerce-paytrace/settings',
+    //         [
+    //             'settings' => $this->getSettings()
+    //         ]
+    //     );
+    // }
+
+    // Private Methods
+    // =========================================================================
+    /**
+     * @return void
+     */
+    private function _initializePlugin()
+    {
         parent::init();
         self::$plugin = $this;
 
@@ -73,40 +110,29 @@ class PayTrace extends Plugin
             ),
             __METHOD__
         );
-
-        $this->_registerComponents();
-    }
-
-    // Protected Methods
-    // =========================================================================
-
-    /**
-     * @inheritdoc
-     */
-    protected function createSettingsModel()
-    {
-        return new Settings();
     }
 
     /**
-     * @inheritdoc
+     * @return void
      */
-    protected function settingsHtml(): string
-    {
-        return Craft::$app->view->renderTemplate(
-            'commerce-paytrace/settings',
-            [
-                'settings' => $this->getSettings()
-            ]
-        );
-    }
-
-    // Private Methods
-    // =========================================================================
     private function _registerComponents()
     {
         $this->registerComponents([
 
         ]);
+    }
+
+    /**
+     * @return void
+     */
+    private function _registerGateways()
+    {
+        Event::on(
+            Gateways::class,
+            Gateways::EVENT_REGISTER_GATEWAY_TYPES,
+            function (RegisterComponentTypesEvent $event) {
+                $event->types[] = PayTraceGateway::class;
+            }
+        );
     }
 }
