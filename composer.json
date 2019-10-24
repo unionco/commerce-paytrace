@@ -1,0 +1,40 @@
+{
+    "name": "unionco/commerce-paytrace",
+    "description": "Craft Commerce 2 Payment Gateway for PayTrace",
+    "type": "craft-plugin",
+    "version": "0.0.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "commerce-paytrace"
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "UNION",
+            "homepage": "https://github.com/unionco"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "unionco\\paytrace\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "commerce-paytrace",
+        "handle": "commerce-paytrace",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "class": "unionco\\paytrace\\PayTrace"
+    }
+}
