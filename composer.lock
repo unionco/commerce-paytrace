@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b2c8b0ee7970e2d106467106e51359a",
+    "content-hash": "0b27c4cefc0a877abb3c07891c6c13cf",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -4325,10 +4325,13 @@
             "dist": {
                 "type": "path",
                 "url": "../omnipay-paytrace",
-                "reference": "82077923d14a1c8b45a89b6683343e0617d83956"
+                "reference": "08909851250d897a1e6eafe648445c11d6ca7335"
             },
             "require": {
                 "league/omnipay": "^3"
+            },
+            "require-dev": {
+                "vimeo/psalm": "^3.4"
             },
             "type": "library",
             "extra": {
@@ -4338,7 +4341,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Omnipay\\Paytrace\\": "src/"
+                    "unionco\\omnipay\\paytrace\\": "src/"
                 }
             },
             "license": [

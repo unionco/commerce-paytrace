@@ -20,7 +20,7 @@
     "require": {
         "craftcms/cms": "^3.0.0-RC1",
         "craftcms/commerce": "^2.2",
-        "unionco/omnipay-paytrace": "^0.0.1",
+        "unionco/omnipay-paytrace": "@dev",
         "craftcms/commerce-omnipay": "@dev",
         "omnipay/common": "^3",
         "php-http/guzzle6-adapter": "^1.1.1",
