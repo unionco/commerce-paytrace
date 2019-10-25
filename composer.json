@@ -20,7 +20,7 @@
     "require": {
         "craftcms/cms": "^3.0.0-RC1",
         "craftcms/commerce": "^2.2",
-        "unionco/omnipay-paytrace": "@dev",
+        "unionco/omnipay-paytrace": "^0.0.1",
         "craftcms/commerce-omnipay": "@dev",
         "omnipay/common": "^3",
         "php-http/guzzle6-adapter": "^1.1.1",
@@ -34,9 +34,8 @@
     "extra": {
         "name": "commerce-paytrace",
         "handle": "commerce-paytrace",
-        "hasCpSettings": true,
+        "hasCpSettings": false,
         "hasCpSection": false,
-        "changelogUrl": "???",
         "class": "unionco\\paytrace\\PayTrace"
     },
     "repositories": [
