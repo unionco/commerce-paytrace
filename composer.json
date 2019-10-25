@@ -37,11 +37,5 @@
         "hasCpSettings": false,
         "hasCpSection": false,
         "class": "unionco\\paytrace\\PayTrace"
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../omnipay-paytrace"
-        }
-    ]
+    }
 }
