@@ -5,7 +5,7 @@ namespace unionco\paytrace\gateways;
 use Craft;
 use Omnipay\Common\AbstractGateway;
 use craft\commerce\omnipay\base\CreditCardGateway as CraftCreditCardGateway;
-use Omnipay\Paytrace\CreditCardGateway as Gateway;
+use unionco\omnipay\paytrace\CreditCardGateway as Gateway;
 // use Omnipay\Paytrace\
 
 class PayTrace extends CraftCreditCardGateway
