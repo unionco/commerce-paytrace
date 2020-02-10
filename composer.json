@@ -19,7 +19,7 @@
     ],
     "require": {
         "craftcms/cms": "^3.0.0-RC1",
-        "craftcms/commerce": "^2.2",
+        "craftcms/commerce": "^2.2||^3.0",
         "unionco/omnipay-paytrace": "@dev",
         "craftcms/commerce-omnipay": "@dev",
         "omnipay/common": "^3",
