@@ -2,7 +2,6 @@
     "name": "unionco/commerce-paytrace",
     "description": "Craft Commerce 2 Payment Gateway for PayTrace",
     "type": "craft-plugin",
-    "version": "0.0.1",
     "keywords": [
         "craft",
         "cms",
