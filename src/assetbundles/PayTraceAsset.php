@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2019 UNION
  */
 
-namespace unionco\paytrace\assetbundles\PayTrace;
+namespace unionco\paytrace\assetbundles;
 
 use Craft;
 use craft\web\AssetBundle;
